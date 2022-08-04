@@ -1,4 +1,4 @@
-package com.myvideolog.dao.domain;
+package com.myvideolog.domain;
 
 import java.util.Date;
 

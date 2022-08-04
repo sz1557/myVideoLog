@@ -1,4 +1,4 @@
-package com.myvideolog.dao.domain.exception;
+package com.myvideolog.domain.exception;
 
 public class ConditionException extends RuntimeException {
     private static final long serialVersionUID = 1L;

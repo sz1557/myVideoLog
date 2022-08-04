@@ -1,7 +1,7 @@
 package com.myvideolog.service.handler;
 
-import com.myvideolog.dao.domain.JsonReponse;
-import com.myvideolog.dao.domain.exception.ConditionException;
+import com.myvideolog.domain.JsonResponse;
+import com.myvideolog.domain.exception.ConditionException;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -15,13 +15,13 @@ import javax.servlet.http.HttpServletRequest;
 public class CommonGlobalExceptionHandler {
     @ExceptionHandler(value = Exception.class)
     @ResponseBody
-    public JsonReponse<String> commonExceptionHandler(HttpServletRequest request, Exception e){
+    public JsonResponse<String> commonExceptionHandler(HttpServletRequest request, Exception e){
         String errorMsg = e.getMessage();
         if(e instanceof ConditionException){
             String errorCode = ((ConditionException)e).getCode();
-            return new JsonReponse<>(errorCode, errorMsg);
+            return new JsonResponse<>(errorCode, errorMsg);
         } else {
-            return new JsonReponse<>("500", errorMsg);
+            return new JsonResponse<>("500", errorMsg);
         }
     }
 }

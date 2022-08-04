@@ -1,4 +1,4 @@
-package com.myvideolog.dao.domain.constant;
+package com.myvideolog.domain.constant;
 
 public interface UserConstant {
     public static final String GENDER_MALE = "0";

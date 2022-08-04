@@ -1,35 +1,35 @@
-package com.myvideolog.dao.domain;
+package com.myvideolog.domain;
 
-public class JsonReponse<T> {
+public class JsonResponse<T> {
     private String code;
     private String msg;
     private T data;
 
-    public JsonReponse(String code, String msg) {
+    public JsonResponse(String code, String msg) {
         this.code = code;
         this.msg = msg;
     }
 
-    public JsonReponse(T data) {
+    public JsonResponse(T data) {
         this.data = data;
         msg = "success";
         code = "0";
     }
 
-    public static JsonReponse<String> success(){
-        return new JsonReponse<>(null);
+    public static JsonResponse<String> success(){
+        return new JsonResponse<>(null);
     }
 
-    public static JsonReponse<String> success(String data){
-        return new JsonReponse<>(data);
+    public static JsonResponse<String> success(String data){
+        return new JsonResponse<>(data);
     }
 
-    public static JsonReponse<String> fail(){
-        return new JsonReponse<>("1", "fail");
+    public static JsonResponse<String> fail(){
+        return new JsonResponse<>("1", "fail");
     }
 
-    public static JsonReponse<String> fail(String code, String msg){
-        return new JsonReponse<>(code, msg);
+    public static JsonResponse<String> fail(String code, String msg){
+        return new JsonResponse<>(code, msg);
     }
 
     public String getCode() {
